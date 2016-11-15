@@ -21,14 +21,14 @@
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group">
-    {!! Form::label('avatar', 'Avatar:', array('class' => 'col-md-4 control-label')) !!}
-    <div class="col-md-6">
-        {!! Form::image(Auth::user()->avatar, 'btnSub', array('class' => 'img-circle', 'id' => 'output', 'style' => 'width:100px;height:100px;display:block;')) !!}
-        {!! Form::file('avatar', array('onchange' => 'loadFile(event)') ) !!}
-    </div>
-    
+<div class="clearfix"></div>
+
+<div class="form-group clo-sm-12">
+    {!! Form::label('avatar', trans('user.avatar'), array('class' => 'col-md-1 control-label')) !!}
+    {!! Form::image(Auth::user()->avatar, 'btnSub', array('class' => 'img-circle', 'id' => 'output', 'style' => 'width:100px;height:100px;display:block;')) !!}
+    {!! Form::file('avatar', array('onchange' => 'loadFile(event)') ) !!}
 </div>
+
 <script>
   var loadFile = function(event) {
     var output = document.getElementById('output');
@@ -38,6 +38,6 @@
 <div class="clearfix"></div>
 
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('user.index') !!}" class="btn btn-default">{{ trans('user.back') }}</a>
+    {!! Form::submit(trans('labels.save'), ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('user.index') !!}" class="btn btn-default">{{ trans('labels.back') }}</a>
 </div>
