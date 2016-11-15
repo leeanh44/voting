@@ -4,7 +4,7 @@
         <th>{{ trans('user.name') }}</th>
         <th>{{ trans('user.email') }}</th>
         <th>{{ trans('user.avatar') }}</th>
-        <th>{{ trans('user.action') }}</th>
+        <th>{{ trans('labels.action') }}</th>
     </thead>
     <tbody>
     @foreach($users as $user)

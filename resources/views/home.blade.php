@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     You are logged in!
-                    <img src="{{ Auth::user()->avatar }}" width="100px" height="100px">
+                    <img src="{{ Auth::user()->avatar }}" width="50px" height="50px">
                 </div>
             </div>
         </div>

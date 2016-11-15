@@ -22,9 +22,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('user', 'Admin\UserController');
 });
 	
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
-	
 Route::get('home', array('as' => 'home', 'uses' => function(){
   return view('home');
 }));
+Route::get('/redirect', 'SocialAuthController@redirectFacebook');
+Route::get('/callback', 'SocialAuthController@callbackFacebook');
+
+Route::get('/callback/{provider}', 'SocialAuthController@callbackTwitter');
+Route::get('/redirect/{provider}', 'SocialAuthController@redirectTwitter');
