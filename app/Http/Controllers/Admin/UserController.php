@@ -70,4 +70,11 @@ class UserController extends Controller
         $user = User::find($id);
         return view('admin.user.show', compact('user'));
     }
+    public function destroy($id){
+        $user = User::find($id);
+        if(User::destroy($user)){
+            return redirect(route('user.index'));
+        }
+        return redirect(route('user.index'));
+    }
 }
